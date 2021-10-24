@@ -1,0 +1,89 @@
+                                         *#&&&&&&&&&&&&.
+                                    #&&&&&&&&&&&&&&&&&&&&&&&&&(
+                                *&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*
+                              &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+                           ,&&&&&&&&&&&&&&&&&&&%%#%%%&&&&&&&&&&&&&&&&&&
+                          &&&&&&&&&&&&&*****************#&&&&&&&&&&&&&&
+                        (&&&&&&&&&&&&*************************&&&&&&&&&&&&(
+                       &&&&&&&&&&&%*****************************%&&&&&&&&&&&
+                      &&&&&&&&&&%*********************************%&&&&&&&&&&
+                     %&&&&&&&&&(********,            *********,    /&&&&&&&&&%
+                    *&&&&&&&&&/*******.     .*(((/.    ******   /#* *&&&&&&&&&*
+                    &&&&&&&&&(*******  /%%%%%%%%%%%&&&&%,*** *&&&&&&%/&&&&&&&&&
+                   *&&&&&&&&%*******/%%%%%%%%%%%%%((&&&&&%#*&&&&&&&&%%%&&&&&&&&
+                   &&&&&&&&&/*****(%%%%%%%%%%%%%%#((%&&&&%%%*&&&&&&&(%%&&&&&&&&&
+                   &&&&&&&&&*****%%%%%%%%%%%%%#/, @@ %&&%%%%#**&&&&/#%%&&&&&&&&&
+                   &&&&&&&&&***&@@@@@@@@@@#/////      @@%%%% ****@@  *@&&&&&&&&&
+                   &&&&&&&&&**%@@@@@@@@@@@@@@@@@@#  /@@@%%%  *****/@@@@&&&&&&&&&
+                   #&&&&&&&*@@@@@@@@@@@@@@@@@@@@@@@@@%%#     *******@@&&&&&&&&&&
+                    &&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@%%    *********(&&&&&&&&&
+                    &&&&&&&&&&@@@@@@@@@@@@@@@&@@@@@@@%     ************%&&&&&&%
+                     &&&&&&&&&&@@@@@@@@@@@@@@@@ (@@@.     **************(&&&&&
+                      &&&&&&&&&&@@@@@@@@@@@@@@@@@,       ************,,%&&&&&
+                       &&&&&&&&&&&@@@@@@@@@@@@@@@@@*     ,,,,,,,,,,,/&&&&&&&
+                        &&&&&&&&&&&&@@@@@@@@@@@@@@@@     ,,,,,,,,(&&&&&&&&&
+                         &&&&&&&&&(***(@@@@@@@@@@@@@@@#   .,****(&&&&&&&&&
+                           &&&&%*****/(((**#@@@@@@@@@@@#**(((/*****%&&&&
+                             %*******(((/                 /(((*******%
+                               *****/#############((((((((((((/*****
+                                   */#############((((((((((((/*
+                                       ###########((((((((((
+
+
+
+.......                              ...                 .****,    **
+..   ,....                           ...                ***   **   **
+..      .. ......  .......   ....... .....   .........  **.        **,*****.   *******   **.*****,
+..     ... ...    ..     .. ...      ...   ...     ...   ******.   ***    ** ,**     **, ***    ***
+.........  ...   ........     .....  ...   ..      ...        ***  **     ** **       ** **      **
+..         ...    ...    .        .. ...   ,..     ...  *,     **  **     ** ***     *** ***    ,**
+..         ...     .......  ,......   .....  .........  ********   **     **   *******   ** ******
+                                                                                         **
+
+             --- ===== Installation instructions for PrestaShop 8 ===== ---
+
+
+
+=== Prerequirements
+
+To install PrestaShop 8, you need a web server running PHP 7.2+ and any flavor of MySQL 5.6+ (MySQL, MariaDB, Percona Server, etc.).
+
+You can find more information on our System requirements (https://devdocs.prestashop.com/8/basics/installation/system-requirements/) page.
+
+=== Installing PrestaShop
+
+Since you are reading this file, you have already downloaded the latest PrestaShop Zip archive and unzipped.
+
+Here is the content of this archive:
+
+* The prestashop.zip archive, which contains all the necessary files.
+* The index.php file, which will automatically unzip the prestashop.zip archive for you.
+* The Install_PrestaShop.html file, which redirects you to https://doc.prestashop.com/display/PS17/Installing+PrestaShop
+
+From there on, follow these instructions:
+
+1. Upload at least index.php and prestashop.zip on your web server.
+2. From your web browser, go to the folder where index.php and prestashop.zip have been uploaded and browse index.php. The Zip archive should unzip automatically.
+3. You are redirected to the PrestaShop installer. Follow the instructions.
+
+After PrestaShop has successfuly been installed, delete the /install/ folder from your server.
+
+Enjoy your store :)
+
+
+
+
+Essential links about PrestaShop:
+
+* User Guide: https://doc.prestashop.com/display/PS17/User+Guide
+* Tech docs (modules & themes): https://devdocs.prestashop.com/
+* Official blog: https://www.prestashop.com/en/blog
+* Developer blog: https://build.prestashop.com/
+* Get community support: https://www.prestashop.com/forums/
+* Contribute with code: https://github.com/PrestaShop/PrestaShop
+* Contribute with translation: https://crowdin.net/project/prestashop-official
+
+
+
+
+                       PrestaShop - WeCommerce Is Better eCommerce
