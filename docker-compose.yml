@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+    db:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: udemy2
+        restart: always
+
+    prestashop:
+        image: prestashop/prestashop:1.7.7.8
+        ports:
+            - 80:80
+        environment:
+            PS_INSTALL_AUTO: 0
+            PS_ERASE_DB: 0
+            DB_SERVER: db
+            DB_USER: root
+            DB_PASSWD: root
+            DB_NAME: udemy2
+            PS_DEV_MODE: 0
+            PS_DOMAIN: localhost:80
+        depends_on:
+            - db
+        restart: always
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - 8080:80
+        environment:
+            PMA_HOST: db
+        depends_on:
+            - db
