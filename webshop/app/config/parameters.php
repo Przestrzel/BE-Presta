@@ -1,0 +1,25 @@
+<?php return array (
+  'parameters' => 
+  array (
+    'database_host' => 'db',
+    'database_port' => '',
+    'database_name' => 'udemy2',
+    'database_user' => 'root',
+    'database_password' => 'root',
+    'database_prefix' => 'ps_',
+    'database_engine' => 'InnoDB',
+    'mailer_transport' => 'smtp',
+    'mailer_host' => '127.0.0.1',
+    'mailer_user' => NULL,
+    'mailer_password' => NULL,
+    'secret' => '5hBLo9YUEaAuXXOIoOhb8xXxs3AOMwMv9IwzdBEnihpmeBCVeKji5NhCsZmI4bGb',
+    'ps_caching' => 'CacheMemcache',
+    'ps_cache_enable' => false,
+    'ps_creation_date' => '2021-11-09',
+    'locale' => 'pl-PL',
+    'use_debug_toolbar' => true,
+    'cookie_key' => 'neot7IrFT2fcfEKjb6DnzQYLowHRobAWGrJhyARCL38CHUb5gOOj8w2cyxqI7Ahi',
+    'cookie_iv' => 'doJ06wd3xy7kCIEKGu1K27zQ1Zy4jzSG',
+    'new_cookie_key' => 'def00000c603670e29504309755c59763df7ca0803df42ade49039a5c58295fd21f25fae6ccd53cb91e46d3fb17af5ac70528e42a80a77405d0d7ab4eabc6737096ec43f',
+  ),
+);

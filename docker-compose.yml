@@ -7,23 +7,8 @@ services:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: udemy2
         restart: always
-
-    prestashop:
-        image: prestashop/prestashop:1.7.7.8
-        ports:
-            - 80:80
-        environment:
-            PS_INSTALL_AUTO: 0
-            PS_ERASE_DB: 0
-            DB_SERVER: db
-            DB_USER: root
-            DB_PASSWD: root
-            DB_NAME: udemy2
-            PS_DEV_MODE: 0
-            PS_DOMAIN: localhost:80
-        depends_on:
-            - db
-        restart: always
+        volumes:
+            - ./dbdump:/docker-entrypoint-initdb.d
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -33,3 +18,25 @@ services:
             PMA_HOST: db
         depends_on:
             - db
+        env_file:
+            - .env
+
+    prestashop:
+        image: prestashop/prestashop:1.7.7.8
+        ports:
+            - 80:80
+        environment:
+            ALLOW_OVERRIDE: 1
+            PS_INSTALL_AUTO: 0
+            PS_ERASE_DB: 0
+            DB_SERVER: db
+            DB_USER: root
+            DB_PASSWD: root
+            DB_NAME: udemy2
+            PS_DEV_MODE: 1 # 0 by default 1 for volumes
+            PS_DOMAIN: localhost:80
+        depends_on:
+            - db
+        restart: always
+        volumes:
+            - ./webshop:/var/www/html
