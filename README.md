@@ -45,7 +45,7 @@ you should be able to connect to:
 1. Get the presta container id
     > docker ps -a
 2. Copy files from container
-    > docker cp f3c:/var/www/html ./udemy2dump
+    > docker cp {presta_id}:/var/www/html ./udemy2dump
 3. Copy files from /udemy2dump to /webshop
 
 # Useful commands
