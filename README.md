@@ -13,12 +13,23 @@ you should be able to connect to:
 -   presta -> on port 80
 -   phpmyadmin -> on port 8080
 
-#### Before starting to work on webshop you should
+### Before starting to work on webshop you should
 
 1. Check if there are changes on the repository.
 2. Get up to date webshop with git pull.
 
-#### Every change of the site should be pushed to the github repository.
+#### Save your current working container as backup
+
+1. Get the presta container id
+    > docker ps -a
+2. Commit docker container and
+    > docker commit {presta_id} udemy2
+3. Save file (remember to be in repo directory and to name it properly)
+    > docker save udemy2 > udemy2-backup.gz
+4. If necessery load file
+    > docker load < udemy2-backup.gz
+
+### Every change of the site should be pushed to the github repository.
 
 1. Do the dump of the website.
 
@@ -28,6 +39,14 @@ you should be able to connect to:
     - Download to the dbdump folder.
 
 2. Commit and push the changes to the repository.
+
+### Loading the files of presta to the repository
+
+1. Get the presta container id
+    > docker ps -a
+2. Copy files from container
+    > docker cp f3c:/var/www/html ./udemy2dump
+3. Copy files from /udemy2dump to /webshop
 
 # Useful commands
 
