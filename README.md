@@ -45,9 +45,9 @@ Stop the container2. Get up to date webshop.
 
 1. Extract dbdump and add these commands on the start of the file.
 
-    > DROP DATABASE IF EXISTS udemy2;
-    > CREATE DATABASE udemy2;
-    > USE udemy2;
+    > DROP DATABASE IF EXISTS udemy2; <br />
+    > CREATE DATABASE udemy2; <br />
+    > USE udemy2; <br />
 
 2. Delete cache and var/cache folders from webshop.
 
