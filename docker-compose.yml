@@ -22,9 +22,14 @@ services:
             - .env
 
     prestashop:
-        image: prestashop/prestashop:1.7.7.8
+        depends_on:
+            - db
         ports:
             - 80:80
+            - 443:443
+        build: 
+            context: .
+            dockerfile: Dockerfile
         environment:
             ALLOW_OVERRIDE: 1
             PS_INSTALL_AUTO: 0
@@ -33,10 +38,9 @@ services:
             DB_USER: root
             DB_PASSWD: root
             DB_NAME: udemy2
-            PS_DEV_MODE: 1 # 0 by default 1 for volumes
+            PS_DEV_MODE: 0 # 0 by default 1 for volumes
             PS_DOMAIN: localhost:80
-        depends_on:
-            - db
         restart: always
         volumes:
             - ./webshop:/var/www/html
+            - ./ssl:/etc/apache2/sites-available

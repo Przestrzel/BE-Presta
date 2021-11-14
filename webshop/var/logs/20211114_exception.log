@@ -1,0 +1,24 @@
+*ERROR* 	v1.7.7.8	2021/11/14 - 10:30:57: Link to database cannot be established: SQLSTATE[HY000] [2002] Connection refused at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 10:30:57: Link to database cannot be established: SQLSTATE[HY000] [2002] Connection refused at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 10:31:00: Link to database cannot be established: SQLSTATE[HY000] [2002] Connection refused at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 10:31:00: Link to database cannot be established: SQLSTATE[HY000] [2002] Connection refused at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:05:51: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:05:51: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:05:55: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:05:55: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:07:44: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:07:44: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:07:45: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:07:45: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:05: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:05: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:16: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:16: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:16: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:16: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:53: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:53: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:54: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:08:54: Link to database cannot be established: SQLSTATE[HY000] [1130] Host &#039;172.27.0.4&#039; is not allowed to connect to this MySQL server at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:41:20: Link to database cannot be established: SQLSTATE[HY000] [2002] Connection refused at line 136 in file classes/db/DbPDO.php
+*ERROR* 	v1.7.7.8	2021/11/14 - 12:41:20: Link to database cannot be established: SQLSTATE[HY000] [2002] Connection refused at line 136 in file classes/db/DbPDO.php
