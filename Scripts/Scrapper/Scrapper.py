@@ -13,7 +13,6 @@ URLs = [
 descriptionUrl = "https://szkolenia.com/"
 
 categoryList = ["Usługi","Finanse i bankowość","Informatyka i telekomunikacja", "Rozwój osobisty"]
-Descriptions = []
 
 categoryCounter = 0
 for page in URLs:
@@ -27,6 +26,8 @@ for page in URLs:
             pagesOnSite = int(pageCount.text[-2])
             pageCounter = 1
             for i in range(1,pagesOnSite+1):
+                Descriptions = []
+                links = []
                 print(page+'?page='+str(pageCounter))
                 pageCounter +=1
                 params = {"page": pageCounter}
@@ -36,31 +37,43 @@ for page in URLs:
                 Categories = [categoryList[categoryCounter] for x in range(len(Titles))]
                 Authors =  soup.find_all("div",{"class": "publication-row-subname"})
                 DescriptionLinks = soup.find_all("div",{"class": "js-link-wrapper"})
+                #print("Liczba opisow", len(DescriptionLinks))
                 Prices =  soup.find_all("div",{"class": "publication-row-item-fixed-size is-180px"})
 
-                for i in range(len(DescriptionLinks)):
-                    newURL = descriptionUrl + DescriptionLinks[i]['data-href']
+                #print("Liczba tytulow", len(Titles))
+                for j in range(len(DescriptionLinks)):
+                    newURL = descriptionUrl + DescriptionLinks[j]['data-href']
                     descriptionResponse = requests.get(newURL, headers=headers, params=params)
                     soup2 = BeautifulSoup(descriptionResponse.text,"html.parser")
                     Descriptions.append(soup2.find("div",{"class": "icube-ce-section-content"}).text)
-                links = soup.find_all('img')
+                    helpDiv = soup2.find("div",{"class": "company-card js-has-clickables"})
+                    links.append(helpDiv.find('img').attrs['src'])
+                    #print(len(links))
+                    #print("URL",newURL)
+                    #print("Wyciagniety DIV", helpDiv.text)
+                    #print("Adres obrazka",helpDiv.find('img').attrs['src'])
+                #print("Opisy",len(DescriptionLinks))
+                #print("Zdjecia",len(links))
 
                 with open('courses.csv', mode='a+', newline='',encoding='utf-8') as coursesFile:
-                    for i in range(len(Titles)):
-                        if "cena do ustalenia" in Prices[i].text:
+                    for k in range(len(Titles)):
+                        if "cena do ustalenia" in Prices[k].text:
                             continue
-                        if ".svg" in links[i]['src'] or ".gif" in links[i]['src']:
+                        if ".svg" in links[k] or ".gif" in links[k]:
                             continue
-                        priceBrutto = Prices[i].text.split('zł')[0].replace(",",".")
-                        tmp = Prices[i].text.split('zł')[1].replace(",",".")
+                        priceBrutto = Prices[k].text.split('zł')[0].replace(",",".")
+                        tmp = Prices[k].text.split('zł')[1].replace(",",".")
                         tmp1 = tmp.replace("(","")
                         tmp2 = tmp1.replace(")","")
                         priceNetto = tmp2.replace("netto","").replace(" ","")
                         active = 1
-                        inSale = 1
-                        descriptionFixed = Descriptions[i][1:500].replace("\n", " ")
-                        coursesFile.write(Titles[i].text + ";" + Categories[i] + ";" + priceBrutto.replace(' ','') + ";" + 
-                                            priceNetto + ";" + links[i]['src'] + ";" + str(active) + ";" + str(inSale) + ";" + descriptionFixed + ';' + str(999999) + '\n'
+                        descriptionFixed = Descriptions[k][1:500].replace("\n", " ")
+                        #print(descriptionFixed)
+                        for l in range(len(descriptionFixed)-1,-1,-1):
+                            if descriptionFixed[l] == ".":
+                                descriptionFixed = descriptionFixed[:l+1]
+                        coursesFile.write(Titles[k].text + ";" + Categories[k] + ";" + priceBrutto.replace(' ','') + ";" + 
+                                            priceNetto + ";" + links[k]+ ";" + str(active) +  ";" + descriptionFixed + ';' + str(999999) + '\n'
                                         )
             categoryCounter +=1
     
