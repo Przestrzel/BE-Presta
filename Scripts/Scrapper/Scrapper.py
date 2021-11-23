@@ -2,7 +2,6 @@ from random import randint
 from bs4 import BeautifulSoup
 import requests
 import re
-from math import ceil
 
 headers = {
     "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"}
@@ -64,7 +63,7 @@ for page in URLs:
                     continue
                 if ".svg" in links[k] or ".gif" in links[k]:
                     continue
-                if not Descriptions[k][1:500].replace("\n", ""):
+                if not Descriptions[k][1:].replace('\n', ''):
                     continue
                 priceBrutto = Prices[k].text.split('zł')[0].replace(",", ".")
                 tmp = Prices[k].text.split('zł')[1].replace(",", ".")
@@ -72,12 +71,10 @@ for page in URLs:
                 tmp2 = tmp1.replace(")", "")
                 priceNetto = tmp2.replace("netto", "").replace(" ", "")
                 active = 1
-                descriptionFixed = re.sub(r'\n+', '<br>', Descriptions[k][1:500])
-                descriptionFixed = descriptionFixed.replace(";"," ")
-                # print(descriptionFixed)
-                for l in range(len(descriptionFixed) - 1, -1, -1):
-                    if descriptionFixed[l] == ".":
-                        descriptionFixed = descriptionFixed[:l + 1]
+                descriptionFixed = re.sub(r'\n', ' <br>', Descriptions[k][1:])
+                descriptionFixed = re.sub(r'\r', ' <br>', descriptionFixed)
+                descriptionFixed = descriptionFixed.replace(";", " ")
+                descriptionFixed = descriptionFixed.replace("❓", "")
                 tmp = randint(0, 1000)
                 onSale = 0
                 percentageDiscount = 0
@@ -88,10 +85,10 @@ for page in URLs:
                 elif tmp < 200:
                     onSale = 1
                     percentageDiscount = 15
-                if tmp >900:
+                elif tmp > 900:
                     date = '2021-11-21'
-                coursesFile.write(str(index)+";:;"+Titles[k].text + ";:;" + Categories[k] + ";:;" + priceBrutto.replace(' ', '') + ";:;" +
-                                  priceNetto + ";:;" + links[k] + ";:;" + str(active) + ";:;" + descriptionFixed + ';:;' + str(999999) + ";:;" +
-                                  str(onSale) + ";:;" + date + ";:;" + str(percentageDiscount) + ";:;" + '\n')
+                coursesFile.write(str(index)+";"+Titles[k].text.replace(';', ' ') + ";" + Categories[k] + ";" + priceBrutto.replace(' ', '') + ";" +
+                                  priceNetto + ";" + links[k] + ";" + str(active) + ";" + descriptionFixed + ';' + str(999999) + ";" +
+                                  str(onSale) + ";" + date + ";" + str(percentageDiscount) + ";" + '\n')
                 index += 1
     categoryCounter += 1
