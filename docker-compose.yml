@@ -27,9 +27,10 @@ services:
         ports:
             - 80:80
             - 443:443
-        build: 
-            context: .
-            dockerfile: Dockerfile
+        image: karabiniewicz/be_172588
+        # build: 
+        #     context: .
+        #     dockerfile: Dockerfile
         environment:
             ALLOW_OVERRIDE: 1
             PS_INSTALL_AUTO: 0
