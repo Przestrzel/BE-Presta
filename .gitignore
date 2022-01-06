@@ -9,6 +9,7 @@ config/settings.*.php
 /webshop/cache
 /cache/*
 /webshop/var/cache
+/webshop/var/logs/*
 !/cache/index.php
 !/cache/*/
 /cache/*/*
