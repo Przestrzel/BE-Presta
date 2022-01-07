@@ -1,47 +1,26 @@
 version: '3.3'
 
 services:
-    db:
-        image: mysql:5.7
-        environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: udemy2
-        restart: always
-        volumes:
-            - ./dbdump:/docker-entrypoint-initdb.d
-
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+   druzynaA:
         ports:
-            - 8080:80
-        environment:
-            PMA_HOST: db
-        depends_on:
-            - db
-        env_file:
-            - .env
-
-    prestashop:
-        depends_on:
-            - db
-        ports:
-            - 80:80
-            - 443:443
+            - 2588:80
+            - 2589:443
         image: karabiniewicz/be_172588
-        # build: 
-        #     context: .
-        #     dockerfile: Dockerfile
         environment:
             ALLOW_OVERRIDE: 1
             PS_INSTALL_AUTO: 0
             PS_ERASE_DB: 0
-            DB_SERVER: db
-            DB_USER: root
+            DB_USER: be_172588
             DB_PASSWD: root
-            DB_NAME: udemy2
-            PS_DEV_MODE: 0 # 0 by default 1 for volumes
-            PS_DOMAIN: localhost:80
+            DB_NAME: be_172588
+            DB_SERVER: actina15.maas
+            PS_DEV_MODE: 0
+            PS_DOMAIN: localhost:2588
+            PS_DOMAIN_SSL: localhost:2589
         restart: always
-        volumes:
-            - ./webshop:/var/www/html
-            - ./ssl:/etc/apache2/sites-available
+        networks:
+            - admin-mysql_default
+networks:
+    admin-mysql_default:
+        external:
+            name: admin-mysql_default

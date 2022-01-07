@@ -1,10 +1,10 @@
 <?php return array (
   'parameters' => 
   array (
-    'database_host' => 'db',
+    'database_host' => 'admin-mysql_db',
     'database_port' => '',
-    'database_name' => 'udemy2',
-    'database_user' => 'root',
+    'database_name' => 'be_172588',
+    'database_user' => 'be_172588',
     'database_password' => 'root',
     'database_prefix' => 'ps_',
     'database_engine' => 'InnoDB',
