@@ -8,21 +8,20 @@ from selenium.webdriver.common.by import By
 PATH = str(Path().absolute())+"\\chromedriver.exe"
 chromeDriver = webdriver.Chrome(PATH)
 chromeDriver.maximize_window()
-basicURL = "https://localhost"
+basicURL = "https://localhost:2589/index.php?"
 
 class shoppingTest:
     def __init__(self):
-        self.__categories = ["uslugi", "finanse-i-bankowosc"]
-        self.__prefixCategories = ["10-", "11-"]
+        self.__categories = ["id_category=11&controller=category", "id_category=10&controller=category"]
         self.__makeAll()
 
     def __makeAll(self):
         self.__addingElements()
-        self.__goToURL("koszyk?action=show")
+        self.__goToURL("controller=cart&action=show")
         sleep(1)
         self.__deleteElement()
         sleep(2)
-        self.__goToURL("zam%C3%B3wienie")
+        self.__goToURL("controller=order")
         self.__createAccount()
         self.__makeAdress()
         self.__deliveryOption()
@@ -33,7 +32,7 @@ class shoppingTest:
     def __addingElements(self):
         for _ in range(10):
             i = randint(0, len(self.__categories)-1)
-            self.__goToURL(self.__prefixCategories[i] + self.__categories[i] + "page?=" + str(randint(0, 5)))
+            self.__goToURL(self.__categories[i] + "&page?=" + str(randint(0, 5)))
             self.__addElement(randint(1, 4), randint(0, 11))  # losowanie liczby elementów, lososwanie numeru
 
 
@@ -43,13 +42,15 @@ class shoppingTest:
         counter_button = chromeDriver.find_elements(By.CSS_SELECTOR, ".btn.btn-touchspin.js-touchspin.bootstrap-touchspin-up")[0]
         for _ in range(counter-1):
             counter_button.click()
-        chromeDriver.find_elements(By.CSS_SELECTOR, ".add-to-cart")[0].click()
+        sleep(2)
+
+        chromeDriver.find_elements(By.CSS_SELECTOR, ".product-actions .add-to-cart")[0].click()
         sleep(1)
-        chromeDriver.find_element(By.CSS_SELECTOR, ".cart-content-btn button").click()
+        #chromeDriver.find_element(By.CSS_SELECTOR, ".cart-content-btn button").click()
         self.__pageLoaded()
 
     def __goToURL(self, name):
-        chromeDriver.get(basicURL + "/" + name)
+        chromeDriver.get(basicURL + name)
         self.__pageLoaded()
 
     def __pageLoaded(self):
@@ -94,7 +95,7 @@ class shoppingTest:
         chromeDriver.find_element(By.CSS_SELECTOR, "#payment-confirmation button").click()
 
     def __checkStatus(self):
-        self.__goToURL("moje-konto")
+        self.__goToURL("controller=my-account")
         chromeDriver.find_element(By.ID, "history-link").click()
         sleep(0.5)
         chromeDriver.find_elements(By.CSS_SELECTOR, ".page-customer-account #content .order-actions a")[0].click()
